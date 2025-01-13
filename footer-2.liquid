@@ -239,19 +239,19 @@
         <div class="left-s">
             <div class="contact-s">
                 <p class="heading">Contact Us</p>
-                <a class="details" href="tel:(000) 000-0004">
-                    (000) 000-0004
+                <a class="details" href="tel:{{ section.settings.phone }}">
+                    {{ section.settings.phone }}
                 </a>
             </div>
             <div class="email-s">
                 <p class="heading">Email</p>
-                <a class="details" href="mailto:comedacerca@gmail.com">
-                    comedacerca@gmail.com
+                <a class="details" href="mailto:{{ section.settings.email }}">
+                    {{ section.settings.email }}
                 </a>
             </div>
         </div>
         <div class="right-s">
-            Copyrights © 2023. Comeda cerca, All Rights Reserved
+            Copyrights &copy; {{ 'now' | date: '%Y' }}. {{ shop.name }}, All Rights Reserved
         </div>
     </div>
 </div>
@@ -271,12 +271,15 @@
             "label": "Logo"
         },
         {
+            "type": "header",
+            "content": "Color Settings"
+        },
+        {
             "type": "color",
             "id": "background",
             "label": "Background",
             "default": "#030712"
         },
-        
         {
             "type": "color",
             "id": "color",
@@ -304,6 +307,22 @@
             "id": "border_color",
             "label": "Border Color",
             "default": "#E5E7EB"
+        },
+        {
+            "type": "header",
+            "content": "Contact"
+        },
+        {
+            "type": "text",
+            "id": "phone",
+            "label": "Phone",
+            "default": "(000) 000-0004"
+        },
+        {
+            "type": "text",
+            "id": "email",
+            "label": "Email",
+            "default": "(000) 000-0004"
         }
     ]
 }
