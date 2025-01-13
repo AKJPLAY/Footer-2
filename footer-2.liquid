@@ -1,0 +1,310 @@
+{% style %}
+    #shopify-section-{{ section.id }} {
+        --bg: {{ section.settings.background }};
+        --border-color: {{ section.settings.border_color }};
+        --color: {{ section.settings.color }};
+        --social-bg: {{ section.settings.social_background }};
+        --social-color: {{ section.settings.social_color }};
+    }
+    #shopify-section-{{ section.id }} {
+        background-color: var(--bg, #030712);
+        color: var(--color, #fff);
+    }
+    #shopify-section-{{ section.id }} a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    #shopify-section-{{ section.id }} a:link,
+    #shopify-section-{{ section.id }} a:visited {
+        color: var(--color, #fff);
+    }
+    #shopify-section-{{ section.id }} .innner-area {
+        padding: 40px 70px;
+        display: grid;
+        gap: 50px;
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area {
+        padding: 30px;
+        }
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area .top-area-s {
+        display: block;
+        }
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s .logo_wrapper a .main-logo {
+        width: 165px;
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu {
+        text-align: center;
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu {
+        text-align: left;
+        }
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu ul li {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu ul li {
+        margin: 0;
+        width: calc(50% - 10px);
+        }
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu ul li:first-child {
+        margin-left: 0px;
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu ul li:last-child {
+        margin-right: 0px;
+    }
+    #shopify-section-{{ section.id }} .innner-area .top-area-s .center-menu ul li a {
+        padding-block: 15px;
+        display: block;
+    }
+    #shopify-section-{{ section.id }} .innner-area .middel-area-s {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        align-items: center;
+    }
+    #shopify-section-{{ section.id }} .innner-area .middel-area-s::before {
+        content: "";
+        display: block;
+        background: var(--border-color, #E5E7EB);
+        opacity: 0.2;
+        width: 100%;
+        height: 1px;
+    }
+    #shopify-section-{{ section.id }} .innner-area .middel-area-s::after {
+        content: "";
+        display: block;
+        background: var(--border-color, #E5E7EB);
+        opacity: 0.2;
+        width: 100%;
+        height: 1px;
+    }
+    #shopify-section-{{ section.id }} .innner-area .middel-area-s .social-icons {
+        display: flex;
+        padding: 14px 28px;
+        background: var(--social-bg, #457F8D);
+        border-radius: 94px;
+        width: -moz-max-content;
+        width: max-content;
+        list-style: none;
+        gap: 15px;
+        color: var(--social-color, #ffffff);
+    }
+    #shopify-section-{{ section.id }} .innner-area .middel-area-s .social-icons li {
+        list-style: none;
+    }
+    #shopify-section-{{ section.id }} .innner-area .middel-area-s .social-icons li a {
+        color: var(--social-color, #fff);
+    }
+    #shopify-section-{{ section.id }} .innner-area .bottom-area-s {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area .bottom-area-s {
+        display: block;
+        }
+    }
+    #shopify-section-{{ section.id }} .innner-area .bottom-area-s .left-s {
+        display: flex;
+        gap: 20px;
+    }
+    #shopify-section-{{ section.id }} .innner-area .bottom-area-s .left-s .email-s,
+    #shopify-section-{{ section.id }} .innner-area .bottom-area-s .left-s .contact-s {
+        flex: 0 0 calc(50% - 10px);
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area .bottom-area-s .left-s .email-s .details,
+        #shopify-section-{{ section.id }} .innner-area .bottom-area-s .left-s .contact-s .details {
+        overflow-wrap: anywhere;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        #shopify-section-{{ section.id }} .innner-area .bottom-area-s .right-s {
+        text-align: center;
+        padding: 30px;
+        }
+    }
+{% endstyle %}
+<div class="innner-area">
+    <div class="top-area-s">
+        <div class="logo_wrapper">
+            <a href="{{ routes.root_url }}">
+                {{ section.settings.logo | img_url: '300x' | img_tag: shop.name, 'main-logo' }}
+            </a>
+        </div>
+        <div class="center-menu">
+            <ul>
+                <li>
+                    <a href="">
+                        Materass Febe
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Memory Hybride
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Matersso Selene
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Spring pocket
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Contant Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="language_selector">
+
+        </div>
+    </div>
+    <div class="middel-area-s">
+        <ul class="social-icons">
+            <li>
+                <a href="{{ section.settings.facebook_url }}">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="14" fill="currentColor"/>
+                        <path d="M21.2137 20.2816L21.8356 16.3301H17.9452V13.767C17.9452 12.6857 18.4877 11.6311 20.2302 11.6311H22V8.26699C22 8.26699 20.3945 8 18.8603 8C15.6548 8 13.5617 9.89294 13.5617 13.3184V16.3301H10V20.2816H13.5617V29.8345C14.2767 29.944 15.0082 30 15.7534 30C16.4986 30 17.2302 29.944 17.9452 29.8345V20.2816H21.2137Z" fill="#457F8D"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="{{ section.settings.twitter_url }}">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_1_449)"/>
+                        <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_1_449)"/>
+                        <rect x="2" y="2" width="28" height="28" rx="6" fill="currentColor"/>
+                        <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="#457F8D"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="#457F8D"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="#457F8D"/>
+                        <defs>
+                        <radialGradient id="paint0_radial_1_449" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)">
+                        <stop stop-color="#B13589"/>
+                        <stop offset="0.79309" stop-color="#C62F94"/>
+                        <stop offset="1" stop-color="#8A3AC8"/>
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_1_449" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)">
+                        <stop stop-color="#E0E8B7"/>
+                        <stop offset="0.444662" stop-color="#FB8A2E"/>
+                        <stop offset="0.71474" stop-color="#E2425C"/>
+                        <stop offset="1" stop-color="#E2425C" stop-opacity="0"/>
+                        </radialGradient>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="{{ section.settings.instagram_url }}">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="28" height="28" rx="14" fill="currentColor"/>
+                        <path d="M12.6186 9.69215C12.6186 10.6267 11.8085 11.3843 10.8093 11.3843C9.81004 11.3843 9 10.6267 9 9.69215C9 8.7576 9.81004 8 10.8093 8C11.8085 8 12.6186 8.7576 12.6186 9.69215Z" fill="#457F8D"/>
+                        <path d="M9.24742 12.6281H12.3402V22H9.24742V12.6281Z" fill="#457F8D"/>
+                        <path d="M17.3196 12.6281H14.2268V22H17.3196C17.3196 22 17.3196 19.0496 17.3196 17.2049C17.3196 16.0976 17.6977 14.9855 19.2062 14.9855C20.911 14.9855 20.9008 16.4345 20.8928 17.5571C20.8824 19.0244 20.9072 20.5219 20.9072 22H24V17.0537C23.9738 13.8954 23.1508 12.4401 20.4433 12.4401C18.8354 12.4401 17.8387 13.1701 17.3196 13.8305V12.6281Z" fill="#457F8D"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="{{ section.settings.linked_in_url }}">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="28" height="28" rx="14" fill="currentColor"/>
+                        <path d="M12.6186 9.69215C12.6186 10.6267 11.8085 11.3843 10.8093 11.3843C9.81004 11.3843 9 10.6267 9 9.69215C9 8.7576 9.81004 8 10.8093 8C11.8085 8 12.6186 8.7576 12.6186 9.69215Z" fill="#457F8D"/>
+                        <path d="M9.24742 12.6281H12.3402V22H9.24742V12.6281Z" fill="#457F8D"/>
+                        <path d="M17.3196 12.6281H14.2268V22H17.3196C17.3196 22 17.3196 19.0496 17.3196 17.2049C17.3196 16.0976 17.6977 14.9855 19.2062 14.9855C20.911 14.9855 20.9008 16.4345 20.8928 17.5571C20.8824 19.0244 20.9072 20.5219 20.9072 22H24V17.0537C23.9738 13.8954 23.1508 12.4401 20.4433 12.4401C18.8354 12.4401 17.8387 13.1701 17.3196 13.8305V12.6281Z" fill="#457F8D"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom-area-s">
+        <div class="left-s">
+            <div class="contact-s">
+                <p class="heading">Contact Us</p>
+                <a class="details" href="tel:(000) 000-0004">
+                    (000) 000-0004
+                </a>
+            </div>
+            <div class="email-s">
+                <p class="heading">Email</p>
+                <a class="details" href="mailto:comedacerca@gmail.com">
+                    comedacerca@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="right-s">
+            Copyrights © 2023. Comeda cerca, All Rights Reserved
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Footer 2",
+    "class": "footer-2",
+    "presets": [
+        {
+            "name":"Footer 2"
+        }
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#030712"
+        },
+        
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "header",
+            "content": "Social Media"
+        },
+        {
+            "type": "color",
+            "id": "social_background",
+            "label": "Background",
+            "default": "#457F8D"
+        },
+        {
+            "type": "color",
+            "id": "social_color",
+            "label": "Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border Color",
+            "default": "#E5E7EB"
+        }
+    ]
+}
+{% endschema %}
